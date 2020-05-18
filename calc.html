@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulačka</title>
+</head>
+<body>
+    <h1>Kalkulačka</h1>
+    <form action="">
+        <p>
+            <label for="x">Proměnná x:</label>
+            <input type="number" id="x" value="0">
+        </p>
+        <p>
+            <label for="y">Proměnná y:</label>
+            <input type="number" id="y" value="0">
+        </p>
+        <p>
+            <label for="plus">+</label>
+            <input type="radio" name="operace" id="plus" value="+">
+            <label for="minus">-</label>
+            <input type="radio" name="operace" id="minus" value="-">
+            <label for="nasobeni">*</label>
+            <input type="radio" name="operace" id="nasobeni" value="*">
+            <label for="deleni">/</label>
+            <input type="radio" name="operace" id="deleno" value="/">
+        </p>
+        <p>
+            <input type="button" name="vypocet" id="vypocet" value="Vypočti">
+        </p>
+        <p>Výsledek = <b id="vysledek">0</b></p>
+    </form>
+    <!--
+    <script src="calc.js"></script>
+    -->
+    <script>
+        console.log("Funguje");
+        var vypocet = document.getElementById('vypocet');
+        vypocet.addEventListener('click', function(){
+            var x = parseInt(document.getElementById('x').value);
+            var y = parseInt(document.getElementById('y').value);
+            var vysledek = document.getElementById('vysledek');
+            if(document.getElementById('plus').checked)
+            vysledek.innerText = x+y;
+            if(document.getElementById('minus').checked)
+            vysledek.innerText = x-y;
+            if(document.getElementById('plus').checked)
+            vysledek.innerText = x*y;
+        })
+    </script>
+</body>
+</html>
